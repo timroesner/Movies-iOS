@@ -64,7 +64,7 @@ class FullViewController: UIViewController, UICollectionViewDataSource, UICollec
             if let dictionary = JSON as? [String: Any] {
                 while(dictionary["\(counter)"] as? [String: Any] != nil){
                     let nestedDic = dictionary["\(counter)"] as? [String: Any]
-                    let tmpMovie = movie(title : (nestedDic!["title"] as? String)!, cover : (nestedDic!["cover"] as? String)!, desc : (nestedDic!["desc"] as? String)!, link : (nestedDic!["link"] as? String)!, year: (nestedDic!["year"] as? String)!, index: counter)
+                    let tmpMovie = movie(title : (nestedDic!["title"] as? String ?? ""), cover : (nestedDic!["cover"] as? String ?? ""), desc : (nestedDic!["desc"] as? String ?? ""), link : (nestedDic!["link"] as? String ?? ""), year: (nestedDic!["year"] as? String ?? ""), index: counter)
                     movies.append(tmpMovie)
                     counter += 1
                 }
